@@ -1,0 +1,53 @@
+:host {
+    width: 100%;
+}
+
+.activiti-label {
+    font-weight: bolder;
+    vertical-align: top;
+}
+
+.activiti-label.mdl-badge[data-badge]:after {
+    right: -27px;
+    top: -2px;
+}
+
+.activiti-label + .icon {
+    position: relative;
+    top: -2px;
+}
+
+.material-icons:hover {
+    color: rgb(255, 152, 0);
+}
+
+.task-details-dialog {
+    position: fixed;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 40%;
+}
+
+.process-tasks-refresh {
+    float: right;
+}
+
+.mdl-dialog__content.form__size {
+    height: 400px;
+    overflow-y: auto;
+}
+
+.no-results {
+    margin-left: 9px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 18px;
+    color: rgba(0, 0, 0, .54);
+    display: block;
+    padding: 12px;
+}
+
+.process-tasks__task-item {
+    cursor: pointer;
+}

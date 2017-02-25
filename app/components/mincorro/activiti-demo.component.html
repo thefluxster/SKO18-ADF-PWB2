@@ -1,0 +1,83 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+  <header class="mdl-layout__header">
+
+    <!-- TABS -->
+
+    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+      <a id="my-tasks-header" href="#mytasks" class="mdl-layout__tab" [class.is-active]="activeTab === 'mytasks'" (click)="activeTab = 'mytasks'">MY TASKS</a>
+      <a id="team-tasks-header" href="#teamtasks" class="mdl-layout__tab" [class.is-active]="activeTab === 'teamtasks'" (click)="activeTab = 'teamtasks'">TEAM TASKS</a>
+    </div>
+  </header>
+
+  <main class="mdl-layout__content activiti">
+
+    <!--  MY TASKS COMPONENT -->
+
+    <section class="mdl-layout__tab-panel" [class.is-active]="activeTab === 'mytasks'" id="mytasks">
+      <div class="page-content">
+        <div class="mdl-grid">
+          <!--div class="mdl-cell mdl-cell--2-col task-column mdl-shadow--2dp">
+            <span><h5>Task Filters</h5></span>
+            <hr>
+            <activiti-start-task [appId]="appId" (onSuccess)="onStartTaskSuccess($event)"></activiti-start-task>
+            <activiti-filters [appId]="appId" (filterClick)="onTaskFilterClick($event)"
+                              (onSuccess)="onSuccessTaskFilterList($event)"
+                              #activitifilter></activiti-filters>
+          </div-->
+          <!--div class="mdl-cell mdl-cell--3-col task-column mdl-shadow--2dp list-column"-->
+            <!--span><h5>Task List</h5></span>
+            <hr-->
+            <activiti-tasklist [appId]="'1'"
+			                   [data]="myDataTasks" 
+                               [landingTaskId]="currentTaskId"
+                               (rowClick)="onTaskRowClick($event)" (onSuccess)="onSuccessTaskList($event)"
+                               #activititasklist></activiti-tasklist>
+          <!--/div-->
+          <!--div class="mdl-cell mdl-cell--7-col task-column mdl-shadow--2dp">
+            <span><h5>Task Details</h5></span>
+            <hr>
+            <activiti-task-details [taskId]="currentTaskId" (formCompleted)="onFormCompleted($event)"
+                                   (taskCreated)="onTaskCreated($event)"
+                                   #activitidetails></activiti-task-details>
+          </div-->
+        </div>
+      </div>
+    </section>
+	
+	<!--  TEAM TASKS COMPONENT -->
+
+    <section class="mdl-layout__tab-panel" [class.is-active]="activeTab === 'teamtasks'" id="teamtasks">
+      <div class="page-content">
+        <div class="mdl-grid">
+          <!--div class="mdl-cell mdl-cell--2-col task-column mdl-shadow--2dp">
+            <span><h5>Task Filters</h5></span>
+            <hr>
+            <activiti-start-task [appId]="appId" (onSuccess)="onStartTaskSuccess($event)"></activiti-start-task>
+            <activiti-filters [appId]="appId" (filterClick)="onTaskFilterClick($event)"
+                              (onSuccess)="onSuccessTaskFilterList($event)"
+                              #activitifilter></activiti-filters>
+          </div-->
+          <!--div class="mdl-cell mdl-cell--3-col task-column mdl-shadow--2dp list-column"-->
+            <!--span><h5>Task List</h5></span>
+            <hr-->
+            <activiti-tasklist [appId]="'1'"
+			                   [data]="teamDataTasks"
+                               [assignment]="'candidate'"
+                               [landingTaskId]="currentTaskId"
+                               (rowClick)="onTaskRowClick($event)" (onSuccess)="onSuccessTaskList($event)"
+                               #activititasklist></activiti-tasklist>
+          <!--/div-->
+          <!--div class="mdl-cell mdl-cell--7-col task-column mdl-shadow--2dp">
+            <span><h5>Task Details</h5></span>
+            <hr>
+            <activiti-task-details [taskId]="currentTaskId" (formCompleted)="onFormCompleted($event)"
+                                   (taskCreated)="onTaskCreated($event)"
+                                   #activitidetails></activiti-task-details>
+          </div-->
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
